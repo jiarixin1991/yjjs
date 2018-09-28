@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>移交接收平台</title>
+  <link rel="stylesheet" href="../layui/css/layui.css"/>
+  <link rel="stylesheet" href="../css/common/yjjs.css"/>
+  <link rel="stylesheet" href="../css/common/main.css"/>
+  <!--<link rel="stylesheet"  href="css/fonts/iconfont.css"/>-->
+  <link rel="stylesheet" href="../css/aliconfont.css"/>
+  <script type="text/javascript" src="../layui/layui.js"></script>
+  <script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
+  <script>
+    //JavaScript代码区域
+    layui.use(['element', 'layer'], function () {
+      var element = layui.element;
+
+    });
+    $(function () {
+      $(".hideMenu").on("click", function () {
+        var oClass = $(".layui-side").hasClass("mini");
+        // alert(!oClass)
+        if (!oClass) {
+          console.log("关闭导航栏");
+          $(".layui-side").animate({
+            width: "75px"
+          }, 'fast')
+          $(".layui-body").animate({
+            left: "75"
+          }, 'fast')
+          $(".layui-footer").animate({
+            left: "75"
+          }, 'fast')
+          $(".layui-nav-more").hide()
+
+          $("#LAY_app_flexible").removeClass("layui-icon-shrink-right");
+          $("#LAY_app_flexible").addClass("layui-icon-spread-left");
+        } else {
+          console.log("展开导航栏");
+          $(".layui-nav-more").show()
+          $(".layui-side").animate({
+            width: "180px"
+          }, 'fast')
+          $(".layui-body").animate({
+            left: "180"
+          }, 'fast')
+          $(".layui-footer").animate({
+            left: "180"
+          }, 'fast')
+          $("#LAY_app_flexible").removeClass("layui-icon-spread-left");
+          $("#LAY_app_flexible").addClass("layui-icon-shrink-right");
+        }
+        $(".layui-side").toggleClass("mini");
+      });
+      //mini 模式下添加 tips
+      $('.layui-nav-tree a').hover(function () {
+        if ($(".layui-side").hasClass('mini')) {
+          var tipText = $(this).find('cite').text();
+          layer.tips(tipText, this, {tips: [4, '#2293fd']});
+        }
+      }, function () {
+        layer.closeAll('tips');
+      });
+      $('.layui-nav-tree a').on("click", function () {
+        $(".nav-bar-title").html("");
+        $(".nav-bar-icon").html("");
+        var tipText = $(this).find('cite').text();
+        var icon = $(this).find('.aliconfont').text();
+        console.log(icon)
+        $(".nav-bar-title").append(tipText);
+        $(".nav-bar-icon").append(icon)
+
+
+      });
+    });
+  </script>
+</head>
+<body class="layui-layout-body ">
+<div class="layui-layout layui-layout-admin layui-bg-skyblue">
+  <div class="layui-header layui-bg-skyblue" style="box-shadow: 0px 5px 8px #1374F9; z-index: 999;">
+    <div class="layui-logo" style="width: 180px">
+      <img src="img/logo-white.png">
+      <a href="javascript:;" layadmin-event="flexible" class="hideMenu layui-layout-right" title="侧边伸缩">
+        <i class="layui-icon layui-icon-spread-left" id="LAY_app_flexible" style="color: white"></i>
+      </a>
+    </div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><i class="aliconfont nav-bar-icon">&#xe606;</i>&nbsp;&nbsp;<span class="nav-bar-title">栏目位置</span>
+      </li>
+
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          测试用户
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="login.html">退出</a></li>
+    </ul>
+  </div>
+
+  <div class="layui-side  layui-bg-skyblue mini " style=" z-index: 900">
+    <div class="layui-side-scroll main-layout-side ">
+      <ul class="layui-nav layui-nav-tree layui-bg-skyblue " lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="doc_list.html" target="main"><i class="aliconfont">&#xe625;</i><cite>条目列表</cite></a>
+         <!-- <dl class="layui-nav-child">
+            <dd><a href="http://www.sina.com.cn/" target="main"><i class="aliconfont">&#xe67c;</i><span
+              class="l-line"></span><cite>导入条目</cite></a></dd>
+          </dl>-->
+        </li>
+        <li class="layui-nav-item">
+          <a href="yj_list.html" target="main"><i class="aliconfont">&#xe6fb;</i><cite>移交条目</cite></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="js_list.html" target="main"><i class="aliconfont">&#xe61d;</i><cite>接收条目</cite></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="a.html" target="main"><i class="aliconfont">&#xe601;</i><cite>导入条目</cite></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="source_file.html" target="main"><i class="aliconfont">&#xe61f;</i><cite>原件列表</cite></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="fileUploader.html" target="main"><i class="aliconfont">&#xe60f;</i><cite>导入原件</cite></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="js_From_Report.html" target="main"><i class="aliconfont">&#xe613;</i><cite>接收单</cite></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="yj_From_Report.html" target="main"><i class="aliconfont">&#xe613;</i><cite>移交单</cite></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="secretWord.html" target="main"><i class="aliconfont">&#xe61e;</i><cite>涉密设置</cite></a>
+        </li>
+      <!--  <li class="layui-nav-item">
+          <a href="dataTemplate.html" target="main"><i class="aliconfont">&#xe664;</i><cite>原件查重</cite></a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="a.html" target="main"><i class="aliconfont">&#xe613;</i><cite>反馈信息</cite></a>
+        </li>-->
+        <li class="layui-nav-item">
+          <a href="edit_template.html" target="main"><i class="aliconfont">&#xe6e1;</i><cite>系统自定义</cite></a>
+        </li>
+       <!-- <li class="layui-nav-item">
+          <a href="yj_From_Report%20form.html" target="main"><i class="aliconfont">&#xe6e1;</i><cite>移交单</cite></a>
+        </li>-->
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <iframe id="right_main" src="https://www.baidu.com" noresize="noresize" scrolling="auto" width="100%" height="100%"
+            frameborder="0" name="main">
+
+
+    </iframe>
+  </div>
+
+
+</div>
+
+</body>
+
+</html>

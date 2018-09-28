@@ -1,0 +1,88 @@
+/*默认导航条宽度*/
+.layui-layout-admin .layui-side {
+  /*width: 180px !important;*/
+  /*width: 75px !important*/
+}
+.layui-layout-admin .layui-body {
+  left: 75px;
+  background-color: white;
+}
+.main-layout-side{
+  /*width: 75px !important;*/
+}
+.layui-layout-admin .layui-body {
+  /*top: 0px !important;*/
+  bottom: 0px !important;
+  /*border: 1px red solid;*/
+}
+.layui-nav-tree .layui-nav-more{
+  /*left: 160px;*/
+  display: none;
+  right: 30px;
+}
+.main-layout-side .layui-nav .aliconfont {
+  padding-left: 10px;
+  /*padding-right: 20px;*/
+  /*font-size: 18px;*/
+  /*color: #8f94a1;*/
+  /*position: relative;*/
+  /*top: 2px;*/
+}
+/*一级栏目高度*/
+.layui-nav-tree .layui-nav-item a{
+  line-height: 55px!important;
+  height: 50px;
+}
+/*二级栏目高度*/
+.layui-nav-tree .layui-nav-child a{
+  line-height: 45px!important;
+  height: 45px;
+}
+/*二级栏目背景*/
+.layui-nav-itemed > .layui-nav-child{
+  /*background-color: rgba(0, 0, 0, .3) !important;*/
+  background-color: #1384d8 !important;
+}
+/*tree导航 字体icon间隙*/
+.layui-nav cite{
+  margin-left: 30px!important;
+}
+/*鼠标移入导航条样式*/
+.layui-nav-tree .layui-nav-bar{
+  background-color: #1BCEBC !important
+}
+
+.layui-bg-skyblue{
+  background-color: #2293fb !important;
+}
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-this > a:hover{
+  background-color: #1BCEBC !important;
+}
+@media screen and (max-width: 1200px) {
+  .layui-layout-admin .layui-body, .layui-layout-admin .layui-footer {
+    left: 75px !important;
+  }
+
+  .layui-layout-admin .layui-side {
+    width: 75px !important;
+  }
+
+  /*.layui-layout-admin .layui-side .layui-side-scroll .layui-nav li.layui-nav-item, .layui-layout-admin .layui-side .layui-side-scroll .layui-nav li.layui-nav-item dl dd {
+    text-align: center
+  }*/
+
+ /* .layui-layout-admin .layui-side .layui-side-scroll .layui-nav li.layui-nav-item a, .layui-layout-admin .layui-side .layui-side-scroll .layui-nav li.layui-nav-item dl dd a {
+    padding: 0
+  }*/
+  .layui-icon-shrink-right:before{
+    content:"\e66b" !important ;
+  }
+  .layui-layout-admin .layui-side .layui-side-scroll .layui-nav li.layui-nav-item a span, .layui-layout-admin .layui-side .layui-side-scroll .layui-nav li.layui-nav-item dl dd a span, .layui-side .layui-side-scroll .kit-side-fold {
+    display: none
+  }
+
+  .layui-layout-admin .kit-logo-mobile {
+    display: block;
+    width: 50px
+  }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>SQL Server</comment>
+    <!--连接池名称-->
+    <entry key="name">com.microsoft.sqlserver.jdbc.SQLServerDriver</entry>
+    <!--指定由连接池所创建的连接的自动提交（auto-commit）状态。-->
+    <entry key="defaultAutoCommit">true</entry>
+    <!--（布尔值）连接池所创建的连接默认只读状态。如果未设置，将不会调用 setReadOnly 方法。（有些驱动并不支持只读模式，比如：informix）-->
+    <entry key="defaultReadOnly">false</entry>
+    <!--（字符串）连接池所创建的连接的默认事务隔离状态。取值范围为：（参考 javadoc）
+NONE READ_COMMITTED READ_UNCOMMITTED REPEATABLE_READ SERIALIZABLE
+如果未设置该值，则不会调用任何方法，默认为 JDBC 驱动。-->
+    <entry key="defaultTransactionIsolation"></entry>
+    <!--（字符串）连接池所创建的连接的默认catalog。-->
+    <entry key="defaultCatalog"></entry>
+    <!--（字符串）所要使用的 JDBC 驱动的完全限定的 Java 类名。该驱动必须能从与 tomcat-jdbc.jar 同样的类加载器访问-->
+    <entry key="driverClassName">com.microsoft.sqlserver.jdbc.SQLServerDriver</entry>
+    <!--（字符串）传入 JDBC 驱动以便建立连接的连接用户名。注意，DataSource.getConnection(username,password)方法默认不会使用传入该方法内的凭证，
+    但会使用这里的配置信息。可参看 alternateUsernameAllowed 了解更多详情。-->
+    <entry key="username">sa</entry>
+    <!--（字符串）传入 JDBC 驱动以便建立连接的连接密码。注意，DataSource.getConnection(username,password)方法默认不会使用传入该方法内的凭证，
+    但会使用这里的配置信息。可参看 alternateUsernameAllowed 了解更多详情。-->
+    <entry key="password">sa123</entry>
+    <!--（整形值）池同时能分配的活跃连接的最大数目。默认为 100。-->
+    <entry key="maxActive">1000</entry>
+    <!--（整型值）池始终都应保留的连接的最大数目。默认为maxActive:100。会周期性检查空闲连接（如果启用该功能），
+    留滞时间超过 minEvictableIdleTimeMillis 的空闲连接将会被释放。（请参考 testWhileIdle）-->
+    <entry key="maxIdle">1000</entry>
+    <!--（整型值）池始终都应保留的连接的最小数目。如果验证查询失败，则连接池会缩减该值。默认值取自 initialSize:10（请参考testWhileIdle）。-->
+    <entry key="minIdle">10</entry>
+    <!--（整型值）连接器启动时创建的初始连接数。默认为 10。-->
+    <entry key="initialSize">20</entry>
+    <entry key="testOnBorrow">true</entry>
+    <!--在连接返回给调用者前用于校验连接是否有效的SQL语句，如果指定了SQL语句，则必须为一个SELECT语句，且至少有一行结果-->
+    <entry key="validationQuery">select 1</entry>
+    <entry key="url">jdbc:sqlserver://127.0.0.1:1433;DatabaseName=yjjs</entry>
+</properties>

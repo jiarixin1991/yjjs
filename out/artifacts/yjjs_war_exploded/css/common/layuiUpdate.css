@@ -1,0 +1,35 @@
+/*弹出层弧边*/
+.layui-layer-iframe {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.layui-table-sort[lay-sort=desc] .layui-table-sort-desc {
+  border-top-color: red !important;
+}
+
+.layui-table-sort[lay-sort=asc] .layui-table-sort-asc {
+  border-bottom-color: red !important;
+}
+.layui-layer-title{
+  height: 50px !important;
+  line-height: 50px !important;
+}
+.layui-layer-setwin {
+  position: absolute !important;
+  right: 15px !important;
+  top: 20px !important;
+  font-size: 0 !important;
+  line-height: initial !important;
+}
+/*弹框头部颜色*/
+.layui-layer-title {
+  background-color: #2293fd !important;
+  color: white !important;
+}
+.layui-layer-setwin .layui-layer-min cite{
+  background-color: white !important;
+}
+.layui-layer-setwin .layui-layer-min:hover cite{
+  background-color: #f3f3f3 !important;
+}

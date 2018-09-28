@@ -1,0 +1,41 @@
+/*主体*/
+.yjjs-body {
+  /*border: 1px red solid;*/
+  width: 900px;
+  height: 100%;
+  margin: 0 auto;
+  font-size: 16px;
+}
+/*头*/
+.yjjs-top{
+  width: 850px;
+  height: 100px;
+  margin: 0 auto;
+  /*border: 1px solid orangered;*/
+}
+/*主体*/
+.yjjs-main{
+  width: 850px;
+  height: 100%;
+  min-height: 100px;
+  margin: 0 auto;
+  /*border: 1px solid orangered;*/
+}
+/*表格样式*/
+.yjjs-table{
+  width: 655px;
+  margin-left: 115px;
+}
+.yjjs-table tr{
+   text-align: center;
+}
+.yjjs-table tr td{
+  height: 30px;
+}
+.yjjs-top ul li {
+  list-style: none;
+  float: left;
+  margin-left: 30px;
+  /*border: 1px blueviolet solid;*/
+  margin-top: 30px;
+}

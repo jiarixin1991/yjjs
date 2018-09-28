@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.url.includeParams" value="all"/>
+    <package name="struts" namespace="/" extends="struts-default,json-default">
+        <!--测试！！！-->
+        <action name="loginAction" class="com.tdts.action.loginAction" method="login">
+            <result name="success">/login.jsp</result>
+        </action>
+        <action name="md5FileUploadAction" class="com.tdts.action.md5FileUploadAction" method="md5FileUpload">
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="Md5CheckAction" class="com.tdts.action.md5FileUploadAction" method="Md5Check">
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="mergeFilesAction" class="com.tdts.action.md5FileUploadAction" method="mergeFiles">
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="createTemplateFieldAction" class="com.tdts.action.TemplateAction" method="createTemplateField"><!--创建模板-->
+            <result type="json">
+                <param name="root">jsonSend</param>
+            </result>
+        </action>
+        <action name="findFixedFieldAction" class="com.tdts.action.TemplateAction" method="findFixedField"><!--查询固定字段-->
+            <result type="json">
+                <param name="root">jsonSend</param>
+            </result>
+        </action>
+    </package>
+</struts>

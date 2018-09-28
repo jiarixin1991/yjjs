@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>详情页</title>
+  <link rel="stylesheet" href="../layui/css/layui.css"/>
+  <link rel="stylesheet" href="../css/aliconfont.css"/>
+  <script type="text/javascript" src="../layui/layui.js"></script>
+  <script type="text/javascript" src="../js/common/echarts.min.js"></script>
+  <script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
+  <script>
+    //JavaScript代码区域
+    layui.use(['element', 'layer', 'carousel'], function () {
+      var element = layui.element;
+      var carousel = layui.carousel;
+      //建造实例
+      carousel.render({
+        elem: '#test1'
+        , width: '100%' //设置容器宽度.layui-carousel > [carousel-item]:before
+        , height: '100px'
+        , arrow: 'always' //始终显示箭头
+        ,indicator:'none'
+        // ,anim: 'updown' //切换动画方式
+      });
+    });
+   /* $(function () {
+        $(".details-Modular").hover(function () {
+          $(this).find(".aliconfont").css("color", "#2293fd");
+          $(this).find("span").css("color", "#2293fd");
+          $(this).css("border", "1px solid #2293fd");
+
+        },function () {
+          $(this).find(".aliconfont").css("color", "#ffffff");
+          $(this).find("span").css("color", "#ffffff");
+          $(this).css("border", "");
+        })
+    });*/
+
+  </script>
+  <style>
+    .layui-bg-skyblue {
+      background-color: #2293fb !important;
+    }
+
+    .details-footer, .details-body {
+      left: 0 !important;
+    }
+
+     .layui-layout-body{
+       overflow: auto;
+       min-width: 1300px;
+       /*background: url(img/bg1.jpg) no-repeat transparent ;*/
+       /*background-position: center center;*/
+       /*background-size: cover;*/
+
+     }
+    .details-logo {
+      width: 150px;
+      height: 100%;
+      text-align: center;
+      margin: 0 auto;
+
+    }
+
+    .details-title {
+      width: 480px;
+      height: 500px;
+      position: absolute;
+      left: 15%;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+    }
+
+    .details-Modular {
+      border-radius: 10px;
+      margin: 0.8%;
+      height: 160px;
+      width: 230px;
+      vertical-align: middle;
+      padding: 5%;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.6s;/*0.6秒内放大*/
+    }
+    .details-Modular:hover{
+      transform: scale(1.1);/*放大到1.1倍*/
+    }
+
+    .details-Modular a, .details-Modular span, .details-Modular p, .details-Modular i {
+      color: white;
+    }
+
+    .details-Modular .aliconfont {
+
+      font-size: 60px;
+      color: white
+    }
+
+    .details-Modular span {
+      font-size: 16px;
+    }
+
+    .details-echarts {
+      position: absolute;
+      right: 15%;
+      top: 15%;
+      float: right;
+      height: 80%;
+    }
+
+    .details-skip {
+      position: absolute;
+      font-size: 20px !important;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 25px;
+      margin: auto;
+      height: 50px;
+    }
+
+    .details-time {
+      position: absolute;
+      right: 35px;
+      top: 50px;
+      color: black;
+      font-size: 16px;
+    }
+
+    .details-notice {
+      width: 100%;
+      height: 100px;
+    }
+
+    .details-bg {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+    #test1 div[carousel-item]>*{
+      line-height: 100px;
+      text-align: center;
+    }
+    .layui-carousel > [carousel-item]:before{
+      content: '' !important;
+    }
+    .layui-body{
+      min-width: 1300px;
+    }
+  </style>
+</head>
+<body class="layui-layout-body ">
+<div class="layui-layout layui-layout-admin layui-bg-skyblue" >
+
+  <div class="layui-header layui-bg-skyblue">
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item">XXXXXXXXX系统名称</li>
+
+    </ul>
+    <div class="details-logo"><!--align="center"-->
+      <img src="img/logo-white.png" style="margin-top: 10px;">
+    </div>
+    <ul class="layui-nav layui-layout-right ">
+      <li class="layui-nav-item"><a href="homePage2.html"><i class="layui-icon layui-icon-return"> </i>返回首页</a></li>
+    </ul>
+  </div>
+  <div class="layui-body details-body" style="overflow: hidden">
+    <div style="width: 100%; height: 100%">
+      <img src="img/bg1.jpg" style="width: 100%; height: 100% ;opacity: 0.1; position: absolute;">
+    </div>
+
+    <!-- 内容主体区域 -->
+    <div style="width: 100%;height: 100%; "><!--background: white; opacity:0.9; -->
+      <div class="details-title ">
+        <div class="layui-col-xs6 details-Modular" style="background-color: #5EADEF;">
+          <i class="aliconfont">&#xe74a;</i>
+          <br/>
+          <br/>
+          <span>原文件数:60件</span>
+        </div>
+        <div class="layui-col-xs6 details-Modular" style="background-color: #5EADEF;">
+          <i class="aliconfont">&#xe70a;</i>
+          <br/>
+          <br/>
+          <span>通知信息:XX条</span>
+        </div>
+        <div class="layui-col-xs6 details-Modular" style="background-color: #7AC6F4;">
+          <i class="aliconfont">&#xe739;</i>
+          <br/>
+          <br/>
+          <span>条目总数: XXX件</span>
+        </div>
+        <div class="layui-col-xs6 details-Modular" style="background-color: #7AC6F4;">
+          <i class="aliconfont">&#xe901;</i>
+          <br/>
+          <br/>
+          <span>查重总数:XXX件</span>
+        </div>
+        <div class="layui-col-xs6 details-Modular" style="background-color: #56BFF4;">
+          <i class="aliconfont">&#xe6a4;</i>
+          <br/>
+          <br/>
+          <span>检查进度:</span>
+        </div>
+        <div class="layui-col-xs6 details-Modular" style="background-color: #56BFF4;">
+
+          <a href="homePage2.html"><span class="details-skip">进入系统 &nbsp;<i class="aliconfont" style="font-size: 25px">&#xe615;</i></span></a>
+        </div>
+      </div>
+    </div>
+    <div class=" layui-col-xs3 details-echarts">
+      <div id="container" style=" width: 100%;  height: 80%; "></div><!--border: 1px blueviolet solid-->
+      <div class="details-notice">
+        <p style="color:#2293fb;">
+          <i class="aliconfont" style=" font-size: 25px">&#xe66a;</i>
+          &nbsp;
+          <span style="position: relative;top: -4px;">通知公告:</span>
+
+        </p>
+        <div class="layui-carousel" id="test1" style="background:  rgba(255,255,255,0)">
+          <div carousel-item>
+            <div class="details-bg">天深电子文件信息移交接收平台 更新啦!</div>
+            <div class="details-bg">有新的移交文件!</div>
+            <div class="details-bg">有新的接收回函!</div>
+            <div class="details-bg">条目导入有问题!</div>
+            <div class="details-bg">原件检测查询到xxx问题!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="details-time">
+      <span>数据同步时间:2018-06-06 18:00 &nbsp;
+        <i class="aliconfont" style="font-size: 20px; color: #2293fb; cursor: pointer">&#xe6a4;</i></span>
+    </div>
+
+  </div>
+  <div class="layui-footer details-footer" style="text-align: center">
+    相关链接 联系我们 法律声明
+    <!--<br/>-->
+    业务电话：022-23042881 022-2042883 Copyright（c） 2015 网站建设/全程设计 : 天津天深科技有限公司
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+  var dom = document.getElementById("container");
+  var myChart = echarts.init(dom);
+  var app = {};
+  option = null;
+  option = {
+    title: {
+      text: '南丁格尔玫瑰图',
+      subtext: '纯属虚构',
+      x: 'center'
+    },
+    tooltip: {
+      trigger: 'item',
+      formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    /* legend: {
+       x : 'center',
+       y : 'bottom',
+        data:['rose1','rose2','rose3','rose4','rose5','rose6','rose7','rose8']
+     },*/
+    toolbox: {
+      show: true,
+      feature: {
+        mark: {show: true},
+        dataView: {show: true, readOnly: false},
+        magicType: {
+          show: true,
+          type: ['pie', 'funnel']
+        },
+        restore: {show: true},
+        saveAsImage: {show: true}
+      }
+    },
+    calculable: true,
+    series: [
+      {
+        name: '半径模式',
+        type: 'pie',
+        radius: [20, 110],
+        center: ['25%', '50%'],
+        roseType: 'radius',
+        label: {
+          normal: {
+            show: false
+          },
+          emphasis: {
+            show: true
+          }
+        },
+        lableLine: {
+          normal: {
+            show: false
+          },
+          emphasis: {
+            show: true
+          }
+        },
+        data: [
+          {value: 10, name: 'rose1'},
+          {value: 5, name: 'rose2'},
+          {value: 15, name: 'rose3'},
+          {value: 25, name: 'rose4'},
+          {value: 20, name: 'rose5'},
+          {value: 35, name: 'rose6'},
+          {value: 30, name: 'rose7'},
+          {value: 40, name: 'rose8'}
+        ]
+      },
+      {
+        name: '面积模式',
+        type: 'pie',
+        radius: [30, 110],
+        center: ['75%', '50%'],
+        roseType: 'area',
+        data: [
+          {value: 10, name: 'rose1'},
+          {value: 5, name: 'rose2'},
+          {value: 15, name: 'rose3'},
+          {value: 25, name: 'rose4'},
+          {value: 20, name: 'rose5'},
+          {value: 35, name: 'rose6'},
+          {value: 30, name: 'rose7'},
+          {value: 40, name: 'rose8'}
+        ]
+      }
+    ]
+  };
+  ;
+  if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+  }
+
+</script>
+</html>

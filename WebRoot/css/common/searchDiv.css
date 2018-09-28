@@ -1,0 +1,59 @@
+/*搜索框*/
+.searchDiv{
+	width: 400px;
+	height: 40px;
+	display: inline-flex;
+	margin: 20px 0 0 3%;
+}
+
+.searchDiv2 {
+    width: 400px;
+    height: 40px;
+    display: inline-flex;
+    position: absolute;
+    left: 2.5%;
+    top: 30%;
+    padding-left: 10px;
+}
+.searchDiv3 {
+    width: 650px;
+    height: 40px;
+    display: inline-flex;
+    position: absolute;
+    left: 2.5%;
+    top: 30%;
+    padding-left: 10px;
+}
+
+.inputStyle {
+    width: 270px;
+}
+.inputStyle2 {
+    width: 170px;
+}
+.searchBtn{
+	width: 80px;
+	margin-left: 20px !important;
+	border-radius: 5px !important;
+}
+
+
+
+
+/*下拉框*/
+.batchTime{
+	width: 100px;
+	float: left;
+	margin: 20px 0 0 10px;
+	display: -webkit-box;
+}
+.demoTable{
+	float: left;
+	margin: 20px 0 0 50px;
+}
+
+.layui-btn-sm{
+	height: 26px !important;
+	line-height: 26px !important;
+}
+

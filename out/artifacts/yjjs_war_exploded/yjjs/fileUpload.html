@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <link rel="stylesheet" href="../css/importFiles.css">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script type="text/javascript" src="../js/zturn.js"></script>
+    <script type="text/javascript" src="../iconfont/iconfont.js"></script>
+    <script type="text/javascript" src="../js/date-format.js"></script>
+    <script type="text/javascript" src="../js/hashmap.js"></script>
+    <script type="text/javascript" src="../webuploader-0.1.5/webuploader.js"></script>
+
+    <style>
+        .filePro{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!-- 文件选择 -->
+<div class="layui-upload">
+    <div class="topDiv">
+        <button type="button" class="layui-btn layui-btn-normal newBtn" id="fileList">选择文件</button>
+        <input type="file" id="chooseFile" multiple style="display: none;">
+        <div class="resert">
+            <span>重置</span>
+            <i class="iconfont icon-refresh newIcon"></i>
+        </div>
+    </div>
+
+    <div class="middleDiv">
+        <ul id="zturn">
+            <img src="../img/noFile.png" class="noFile">
+        </ul>
+    </div>
+
+    <div class="bottomDiv">
+        <button type="button" class="layui-btn layui-btn-normal newBtn2" id="uploadFile">上传</button>
+
+    </div>
+</div>
+
+<!-- 文件上传进度 -->
+
+<div class="filePro">
+    <div class="pages">
+        <div class="files">
+
+        </div>
+
+        <div class="footer">
+            <div class="totalProgress">
+                <span class="totalText">总进度：  <span class="totalProNum">66%</span></span>
+            </div>
+            <button class="layui-btn layui-btn-normal newBtnPro">已完成</button>
+            <div class="stopAll">
+                <span>全部暂停</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+    //点击选择文件按钮触发file按钮
+    $(document).on("click", "#fileList", function(){
+       $("#chooseFile").click();
+    });
+
+    //获取文件信息
+    var curFiles = [];
+    $(document).on("change", "#chooseFile", function(){
+        var obj = document.getElementById("chooseFile");
+        console.log(obj.files);    //==>fileList    多文件上传
+        Array.prototype.push.apply(curFiles, obj.files);
+        console.log(curFiles);
+        var len = obj.files.length;
+
+        for (var i = 0; i < len; i++) {
+            var fileName = obj.files[i].name;      //文件名
+            var fileType = obj.files[i].type;      //文件类型
+            console.log(fileType);
+            var fileSize = (obj.files[i].size/1014).toFixed(1) +'kb';     //文件大小
+            var fileDate = new Date(obj.files[i].lastModified).Format("yyyy-MM-dd hh:mm:ss");    //最后修改时间
+            //var fileDate = obj.files[i].lastModifiedDate.Format("yyyy-MM-dd hh-mm-ss");    //最后修改时间
+
+            //文件信息
+            var str = '<li class="poster-item zturn-item">\n' +
+                '                <div class="delFile">\n' +
+                '                    <i class="iconfont icon-guanbi newIcon3"></i>\n' +
+                '                </div>\n' +
+                '                <div class="fileType">\n';
+
+            //文件上传进度
+            var strPro = '<div class="eachFile">\n' +
+                '                <div class="fileInfoPro">\n' +
+                '                    <div class="fileIcon">\n';
+
+
+            if(fileType == 'application/msword' || fileType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'){    //word
+                str += '<svg class="icon newIcon2" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-word1"></use>\n' +
+                    '                    </svg>\n';
+                strPro += '<svg class="icon newIconPro" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-word1"></use>\n' +
+                    '                    </svg>\n';
+            } else if(fileType == 'application/vnd.ms-excel' || fileType == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){   //excel
+                str += '<svg class="icon newIcon2" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-excel"></use>\n' +
+                    '                    </svg>\n';
+                strPro += '<svg class="icon newIconPro" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-excel"></use>\n' +
+                    '                    </svg>\n';
+            } else if(fileType == 'application/pdf'){   //pdf
+                str += '<svg class="icon newIcon2" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-pdf3"></use>\n' +
+                    '                    </svg>\n';
+                strPro += '<svg class="icon newIconPro" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-pdf3"></use>\n' +
+                    '                    </svg>\n';
+            } else if(fileType == 'text/plain'){   //txt
+                str += '<svg class="icon newIcon2" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-txt"></use>\n' +
+                    '                    </svg>\n';
+                strPro += '<svg class="icon newIconPro" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-txt"></use>\n' +
+                    '                    </svg>\n';
+            } else if(fileType == 'image/jpeg'){   //jpg
+                str += '<svg class="icon newIcon2" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-jpg"></use>\n' +
+                    '                    </svg>\n';
+                strPro += '<svg class="icon newIconPro" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-jpg"></use>\n' +
+                    '                    </svg>\n';
+            } else if(fileType == 'image/png'){   //png
+                str += '<svg class="icon newIcon2" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-png"></use>\n' +
+                    '                    </svg>\n';
+                strPro += '<svg class="icon newIconPro" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-png"></use>\n' +
+                    '                    </svg>\n';
+            } else if(fileType == 'application/x-zip-compressed'){
+                str += '<svg class="icon newIcon2" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-ZIP"></use>\n' +
+                    '                    </svg>\n';
+                strPro += '<svg class="icon newIconPro" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-ZIP"></use>\n' +
+                    '                    </svg>\n';
+            } else {
+                str += '<svg class="icon newIcon2" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-qita1"></use>\n' +
+                    '                    </svg>\n';
+                strPro += '<svg class="icon newIconPro" aria-hidden="true">\n' +
+                    '                        <use xlink:href="#icon-qita1"></use>\n' +
+                    '                    </svg>\n';
+            }
+
+            str += '                </div>\n' +
+                '                <div class="fileInfo">\n' +
+                '                    <div class="textInfo">\n' +
+                '                        <span class="fileName" title="'+fileName+'">文件名：'+fileName+'</span>\n' +
+                '                        <span>文件大小：'+ fileSize+'</span>\n' +
+                '                        <span>最后修改时间：'+fileDate+'</span>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '            </li>';
+
+            strPro += '                    </div>\n' +
+                '                    <div class="progress">\n' +
+                '                        <span class="proNum">66%</span>\n' +
+                '                        <span class="fileNamePro" title="'+fileName+'">'+fileName+'</span>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '            </div>';
+
+            $("#zturn").prepend(str);
+            $(".pages .files").prepend(strPro);
+            scroll();
+        }
+    });
+
+    //删除文件
+    $("#zturn").on("click", ".newIcon3", function(){
+        var index = curFiles.length - 1 - $(this).closest(".poster-item").index();
+        curFiles.splice(index, 1);
+        $(this.closest(".poster-item")).remove();
+        scroll();
+    });
+
+    //上传按钮
+    $(".bottomDiv").on("click", "#uploadFile", function(){
+        $(".layui-upload").css("display", "none");
+        $(".filePro").css("display", "block");
+        var formData = new FormData();
+        for(var i=0; i<curFiles.length; i++){
+            //console.log(curFiles[i]);
+            formData.append("files[]", curFiles[i]);
+        }
+        console.log(formData);
+        //var a = formData.entries();
+        //console.log(a.next());
+    })
+
+
+    //生成轮播
+    function scroll(){
+        haveFile();
+        var count = $(".poster-item").length;
+        var Awidth = 0;
+        if(count < 3){
+            Awidth = 300;
+        } else {
+            Awidth = 600;
+        }
+        //alert(count);
+        var aa=new zturn({
+            id:"zturn",
+            opacity:0.9,    //透明度
+            width:250,     //整体向左偏移量  一个卡片的宽度
+            Awidth:Awidth,  //轮播区域宽度
+            scale:0.8,    //渐变尺寸
+            auto:false,//是否轮播 默认5000  true/false
+            turning:1000//轮播时长
+        });
+    }
+
+    //没有文件选中时，中间显示无文件图片
+    function haveFile(){
+        if($("#zturn li").length > 0){
+            $("#zturn .noFile").hide();
+        } else {
+            $("#zturn .noFile").show();
+        }
+    }
+</script>
+<!--<script type="text/javascript" src="../js/upload/uploader.js"></script>-->
+</body>
+</html>

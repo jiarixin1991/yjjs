@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>移交单、接收单</title>
+
+  <link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="../css/aliconfont.css">
+  <link rel="stylesheet" type="text/css" href="../css/yjjsForm.css">
+  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../layui/layui.js"></script>
+  <script type="text/javascript" src="../css/iconfont/iconfont.js"></script>
+</head>
+<style type="text/css">
+  .icon {
+    width: 3em;
+    height: 3em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+</style>
+<body>
+<div class="yjjs-body">
+  <div class="yjjs-top">
+    <ul>
+      <li style="color: #2293FD;">
+        <br/>
+        统计：
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-excel"></use>
+        </svg>
+        :200
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-word1"></use>
+        </svg>
+        :200
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-pdf3"></use>
+        </svg>
+        :200
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-jpg"></use>
+        </svg>
+        :200
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-txt"></use>
+        </svg>
+        :200
+      </li>
+      <li>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-png"></use>
+        </svg>
+        :200
+      </li>
+      <!--   <li><i class="aliconfont">&#xe69a;</i>:200</li>
+         <li><i class="aliconfont">&#xe618;</i>:200</li>
+         <li><i class="aliconfont">&#xe69d;</i>:200</li>
+         <li><i class="aliconfont">&#xe646;</i>:200</li>
+         <li><i class="aliconfont"></i>其他:200</li>
+         <li><i class="aliconfont"></i>:200</li>-->
+    </ul>
+  </div>
+  <div class="yjjs-main">
+    <table class="layui-table yjjs-table" lay-size="lg">
+      <colgroup>
+        <col width="">
+        <col width="">
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+      <tr>
+        <th>条目总数</th>
+        <th>原文件总数</th>
+        <th>文件大小</th>
+        <th>是否检测</th>
+        <th>是否已查重</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>200条</td>
+        <td>100件</td>
+        <td>38650MB</td>
+        <td>是</td>
+        <td>是</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <br/>
+<!--border: 1px deepskyblue solid-->
+  <p style="width: 850px;  margin: 0 auto; text-align: right; ">时间戳：XXXXXXXXXXXXXXXXXXXX</p>
+
+  <div class="yjjs-main" style="margin-top: 50px;">
+    <table  style=" margin-left: 100px">
+      <tr>
+        <td >备注：</td>
+        <td width="600px">
+          <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="height: 80px; text-align: center;" >
+          <a href="javascript:;" class="layui-btn-normal layui-btn">确认提交</a>
+          &nbsp;&nbsp;&nbsp;
+          <a href="javascript:;">取消</a>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <p>
+
+  </p>
+</div>
+
+</body>
+</html>

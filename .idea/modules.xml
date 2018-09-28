@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EasyStarCore/EasyStarCore.iml" filepath="$PROJECT_DIR$/EasyStarCore/EasyStarCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yjjs.iml" filepath="$PROJECT_DIR$/yjjs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yjjsFiles/yjjsFiles.iml" filepath="$PROJECT_DIR$/yjjsFiles/yjjsFiles.iml" />
+    </modules>
+  </component>
+</project>

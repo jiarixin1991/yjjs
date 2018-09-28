@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>createSystem.html --- 创建系统页面</title>
+  <link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="../css/aliconfont.css">
+  <link rel="stylesheet" type="text/css" href="../css/createSytem.css">
+  <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../layui/layui.js"></script>
+
+
+  <style>
+
+  </style>
+  <script>
+    layui.use('form', function () {
+      var form = layui.form;
+
+    });
+  function go() {
+    window.history.go(-1);
+  }
+  </script>
+</head>
+<body>
+<div class="sys-body">
+  <p style="text-align: left; font-size: 15px;color: #2293fd;">
+    <!--重置--><span class="aliconfont sys-fanhui" style="font-size: 28px ;font-weight: bolder; " onclick="go();" title="返回">&#xe628;</span>
+
+  </p>
+  <form class="layui-form">
+  <table class="sys-table"   ><!--style="border: 1px red solid"-->
+    <colgroup>
+      <col width="100">
+      <col width="120">
+      <col>
+      <col>
+      <col>
+    </colgroup>
+    <tr>
+      <td></td>
+      <td>
+        <i class="aliconfont">&#xe72e;</i>
+        绑定模板：
+      </td>
+      <td colspan="2">
+        <div style="width: 95%;">
+          <select >
+            <option>请选择</option>
+          </select>
+        </div>
+
+      </td>
+      <td>
+        <i class="aliconfont " style="font-size: 18px">&#xe6ba;</i>
+        新增模板
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <i class="aliconfont">&#xe677;</i>
+        系统名：
+      </td>
+      <td>
+          <div class="layui-input-inline">
+            <input type="text" name="text" required lay-verify="required" placeholder="系统名称" autocomplete="off" class="layui-input">
+          </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <i class="aliconfont">&#xe629;</i>
+        用户名：
+      </td>
+      <td>
+        <div class="layui-input-inline">
+          <input type="text" name="text" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <i class="aliconfont">&#xe63b;</i>
+        密码：
+      </td>
+      <td>
+        <div class="layui-input-inline">
+          <input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+
+      <td colspan="5" style="text-align: center">
+        <!--<a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-lg "  onclick="go();">上一步</a>-->
+        <a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-lg " >保存</a>
+      </td>
+    </tr>
+  </table>
+  </form>
+</div>
+</body>
+</html>

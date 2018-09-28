@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建数据模板</title>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+    <link rel="stylesheet" href="../css/aliconfont.css"/>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        html, body {
+            /*font-family: SimSun;*/
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            height: 600px;
+            width: 100%;
+        }
+
+        .create-moban {
+            padding-top: 30px;
+            width: 95%;
+            height: 100%;
+            margin: 0 5%;
+
+        }
+
+        .create-checkbox {
+            text-align: center;
+        }
+
+        .layui-form-select {
+            margin: -9px -15px;
+            /*width: 100px!important;*/
+        }
+
+        .create-type {
+            /*width: 100px!important;*/
+        }
+
+        .layui-table-edit {
+            box-shadow: none !important;
+            /*border: 0 !important;*/
+        }
+
+        .layui-input, .layui-select {
+            border: 0 !important;
+        }
+
+        .layui-table td .bordernone {
+            border: 0 !important;
+        }
+
+        .layui-table td, .layui-table th {
+            text-align: center;
+        }
+
+        input:focus {
+            border: 1px greenyellow solid !important;
+        }
+
+        .temp-del {
+            color: #dbdbdb;
+            font-size: 28px;
+        }
+
+        #create-one:hover {
+            color: #2293fb;
+        }
+
+        .temp-del:hover {
+            opacity: 0.8;
+            color: #f42c27 !important;
+        }
+
+        .td-temp-del {
+            border: 0 !important;
+        }
+
+        .layui-table tbody tr:hover, .layui-table-hover {
+            background: none !important;
+
+        }
+    </style>
+</head>
+<body>
+<div class="create-moban layui-form ">
+    <form id="formadd">
+        <table id="data-create" class="layui-table"><!--lay-even隔行背景-->
+            <colgroup>
+                <col width="150">
+                <col width="100">
+                <col width="80">
+                <col width="100">
+                <col width="100">
+                <col width="100">
+                <col width="15">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>字段名</th>
+                <th>类型</th>
+                <th>长度</th>
+                <th>是否涉密</th>
+                <th>是否查重</th>
+                <th>必填</th>
+                <!--<th>删除</th>-->
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr class="data-num " id="data-save1" rel="1">
+                <td>
+                    <input type="text" class="layui-input layui-table-edit input-text" name="cn-fieldname1" value=""/>
+                </td>
+                <td>
+                    <select class="create-type" name="type-name1" lay-verify="required">
+                        <option value="none">请选择</option>
+                        <option value="none">int</option>
+                        <option value="none">varchar</option>
+                        <option value="none">datetime</option>
+                        <option value="none">整型</option>
+                        <option value="none">字符型</option>
+                        <option value="none">时间</option>
+
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" class="layui-input layui-table-edit input-text" name="fieldnum1" value=""/>
+                </td>
+                <td class="create-checkbox"><input type="checkbox" name="shemi1" lay-skin="primary"></td>
+                <td class="create-checkbox"><input type="checkbox" name="chachong1" lay-skin="primary"></td>
+                <td class="create-checkbox"><input type="checkbox" name="required1" lay-skin="primary"></td>
+                <td class="create-checkbox td-temp-del"><i class="aliconfont temp-del">&#xe6b9;</i></td>
+            </tr>
+            <tr class="data-num " id="data-save2" rel="2">
+                <td>
+                    <input type="text" class="layui-input layui-table-edit input-text" name="cn-fieldname2" value=""/>
+                </td>
+                <td>
+                    <select class="create-type" name="type-name2" lay-verify="required">
+                        <option value="none">请选择</option>
+                        <option value="none">int</option>
+                        <option value="none">varchar</option>
+                        <option value="none">datetime</option>
+                        <option value="none">整型</option>
+                        <option value="none">字符型</option>
+                        <option value="none">时间</option>
+
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" class="layui-input layui-table-edit input-text" name="fieldnum2" value=""/>
+                </td>
+                <td class="create-checkbox"><input type="checkbox" name="shemi2" lay-skin="primary"></td>
+                <td class="create-checkbox"><input type="checkbox" name="chachong2" lay-skin="primary"></td>
+                <td class="create-checkbox"><input type="checkbox" name="required2" lay-skin="primary"></td>
+                <td class="create-checkbox td-temp-del"><i class="aliconfont temp-del">&#xe6b9;</i></td>
+            </tr>
+            <tr class="data-num " id="data-save3" rel="3">
+                <td>
+                    <input type="text" class="layui-input layui-table-edit input-text" name="cn-fieldname3" value=""/>
+                </td>
+                <td>
+                    <select class="create-type" name="type-name3" lay-verify="required">
+                        <option value="none">请选择</option>
+                        <option value="none">int</option>
+                        <option value="none">varchar</option>
+                        <option value="none">datetime</option>
+                        <option value="none">整型</option>
+                        <option value="none">字符型</option>
+                        <option value="none">时间</option>
+
+                    </select>
+                </td>
+
+                <td>
+                    <input type="text" class="layui-input layui-table-edit input-text" name="fieldnum3" value=""/>
+                </td>
+                <td class="create-checkbox"><input type="checkbox" name="shemi3" lay-skin="primary"></td>
+                <td class="create-checkbox"><input type="checkbox" name="chachong3" lay-skin="primary"></td>
+                <td class="create-checkbox"><input type="checkbox" name="required3" lay-skin="primary"></td>
+                <td class="create-checkbox td-temp-del"><i class="aliconfont temp-del">&#xe6b9;</i></td>
+            </tr>
+            <tr id="add-create">
+                <td id="create-one" colspan="7" style="text-align: center;">
+                    <input type="hidden" id="num" value="3"/>
+                    新增<i class="aliconfont" style="font-size: 14px">&#xe60a;</i>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" style="text-align: center; height: 100px ;border: 0">
+                    <!-- <button>
+                       <i class="aliconfont" style="font-size: 14px">&#xe60a;</i>
+                       保存
+                     </button>
+                     <button>
+                       <i class="aliconfont" style="font-size: 14px">&#xe60a;</i>
+                       重置
+                     </button>-->
+                    <div class="btnDiv">
+                        <button type="submit" class="layui-btn layui-btn-normal add-btn  ">
+                            保存2111
+                        </button>
+                        <button class="layui-btn layui-btn-normal add-btn  " type="reset">
+                            重置
+                        </button>
+                        <button id="cs" class="layui-btn layui-btn-normal add-btn  ">
+                            测试
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <!--<div  style="width: 100%; height: 50px ; border: 1px solid rebeccapurple;position: fixed; bottom: 0;left: 0;  ">
+
+    </div>-->
+</div>
+
+<script>
+    var form, element;
+    var params = [{}, {}, {}];
+    var values, a = "data-save", n = a.length, rel;
+
+    layui.use(['element', 'layer', 'form'], function () {
+        element = layui.element;
+        form = layui.form;
+    });
+    //添加一行
+    $("#create-one").on("click", function () {
+        //添加一行添加一个对象
+        values = {};
+        params.push(values);
+        var num = $("#num").val();
+        num = parseInt(num) + 1;
+        $("#add-create").before(' <tr  class="data-num layui-form " id="data-save' + num + '" lay-filter="test' + num + '">\n' +
+            '        <td>\n' +
+            '          <input type="text" class="layui-input layui-table-edit input-text" name="cn-fieldname' + num + '" value=""/>\n' +
+            '        </td>\n' +
+            '        <td >\n' +
+            '          <select class="create-type input-text" name="type-name' + num + '" lay-verify="required" >\n' +
+            '            <option value="none">请选择</option>\n' +
+            '            <option value="none">int</option>\n' +
+            '            <option value="none">varchar</option>\n' +
+            '            <option value="none">datetime</option>\n' +
+            '            <option value="none">整型</option>\n' +
+            '            <option value="none">字符型</option>\n' +
+            '            <option value="none">时间</option>\n' +
+            '\n' +
+            '          </select>\n' +
+            '        </td>\n' +
+            '        <td>\n' +
+            '          <input type="text" class="layui-input layui-table-edit input-text"name="fieldnum' + num + '" value=""/>\n' +
+            '        </td>\n' +
+            '        <td class="create-checkbox"><input class="input-text" type="checkbox" name="shemi' + num + '" lay-skin="primary"></td>\n' +
+            '        <td class="create-checkbox"><input type="checkbox" name="chachong' + num + '" lay-skin="primary"></td>\n' +
+            '        <td class="create-checkbox"><input type="checkbox" name="required' + num + '" lay-skin="primary"></td>\n' +
+            '        <td class="create-checkbox td-temp-del"> <i class="aliconfont temp-del">&#xe6b9;</i> </td>\n' +
+            '      </tr>')
+        $("#num").val(num);
+        var name = 'test' + num;
+        form.render('checkbox');
+        form.render('select', name);
+    });
+    //删除一行
+    $(document).on("click", ".temp-del", function () {
+        rel = $(this).parent().parent().attr("id").substring(n);
+        // params.splice(rel, 1);
+        values = params[rel - 1]
+        params.remove()
+        console.log(params);
+
+        $(this).parent().parent().remove();
+
+
+    });
+    //保存数据时
+    $(document).on("blur", ".input-text", function () {
+        // console.log("触发");
+        // console.log($(this).attr("name"));
+        var name = $(this).attr("name");
+        // console.log($(this).parent().parent().attr("id").substring(n));
+        rel = $(this).parent().parent().attr("id").substring(n);
+        // console.log($(this).val())
+        values = params[rel - 1]
+        switch (name) {
+            case "cn-fieldname" + rel:
+                values["cn-fieldname"] = $(this).val();
+                break;
+            case "en-fieldname" + rel:
+                values["en-fieldname"] = $(this).val();
+                break;
+            case "fieldnum" + rel:
+                values["fieldnum"] = $(this).val();
+                break;
+        }
+        console.log(JSON.stringify(params));
+
+    })
+    /* var json = [];
+     var values = {};
+     $(function () {
+       $("#cs").on("click", function () {
+         $("#data-create tr").each(function (index, element) {
+           alert(index)
+         })
+
+       });
+
+
+
+     });*/
+
+</script>
+</body>
+</html>

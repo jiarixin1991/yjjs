@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    
+    <package name="struts2" namespace="/struts2" extends="struts">
+        <!-- 系统管理 -->
+        <action name="getSystemAction" class="com.tdts.action.SysManageAction" method="getSystem">        <!-- 获取系统列表 -->
+            <result name="success">/yjjs/main_page.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="getSysInfoByIDAction" class="com.tdts.action.SysManageAction" method="getSysInfoByID">        <!-- 获取系统信息 -->
+            <result name="success">/yjjs/main_page.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="getSysByKeyWordAction" class="com.tdts.action.SysManageAction" method="getSysByKeyWord">        <!-- 获取系统信息 -->
+            <result name="success">/yjjs/main_page.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        
+        
+        
+        <!-- 涉密管理 -->
+        <action name="getSecretListAction" class="com.tdts.action.SecretManageAction" method="getSecretList">        <!-- 获取涉密关键字信息 -->
+            <result name="success">/yjjs/secretWord.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="addSecretListAction" class="com.tdts.action.SecretManageAction" method="addSecretWordList">        <!-- 批量添加涉密关键字 -->
+            <result name="success">/yjjs/secretWord.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="addSecretAction" class="com.tdts.action.SecretManageAction" method="addSecretWord">        <!-- 添加单个涉密关键字 -->
+            <result name="success">/yjjs/secretWord.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        
+        
+        <!-- 原件管理 -->
+        <action name="FileHasHangedAction" class="com.tdts.action.FileManageAction" method="getListHasHanged">    <!-- 获取已挂接文件 -->
+            <result name="success">/yjjs/hangUp.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        
+        <action name="GetFileNotHangedAction" class="com.tdts.action.FileManageAction" method="getFileNotHanged">     <!-- 获取未挂接文件 -->
+            <result name="success">/yjjs/hangUp.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        
+        <action name="GetFileByIDAction" class="com.tdts.action.FileManageAction" method="getFileInfoByID">    <!-- 根据文件ID获取文件内容 -->
+            <result name="success">/yjjs/hangUp.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        
+        <action name="CancleHangedFileAction" class="com.tdts.action.FileManageAction" method="cancleHanged">    <!-- 取消原件挂接 -->
+            <result name="success">/yjjs/hangUp.jsp</result>
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        
+        
+        <!-- 条目管理 -->
+        <action name="batchDelDocAction" class="com.tdts.action.DocManageAction" method="batchDelDoc">    <!-- 批量删除条目 -->
+            <result name="success">/yjjs/hangUp.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        
+        
+        <!-- 用户管理 -->
+        <action name="userLoginAction" class="com.tdts.action.UserRightAction" method="userLogin">    <!-- 批量删除条目 -->
+            <result name="success">login.jsp</result>
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        
+    </package>
+    
+</struts>
+

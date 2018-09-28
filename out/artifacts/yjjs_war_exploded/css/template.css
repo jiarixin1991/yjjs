@@ -1,0 +1,111 @@
+html, body {
+  /*font-family: SimSun;*/
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  height: 600px;
+  width: 100%;
+}
+
+.create-moban {
+  padding-top: 30px;
+  width: 95%;
+  height: 100%;
+  margin: 0 5%;
+
+}
+
+.create-checkbox {
+  text-align: center;
+}
+
+.layui-form-select {
+  margin: -9px -15px;
+  /*width: 100px!important;*/
+}
+
+.create-type {
+  /*width: 100px!important;*/
+}
+
+.layui-table-edit {
+  box-shadow: none !important;
+  /*border: 0 !important;*/
+}
+
+.layui-table .layui-input, .layui-select {
+  border: 0 !important;
+}
+
+.layui-table td .bordernone {
+  border: 0 !important;
+}
+
+.layui-table td, .layui-table th {
+  text-align: center;
+}
+
+.layui-table input:focus {
+  border: 1px greenyellow solid !important;
+}
+
+.temp-del {
+  display: none;
+  /*color: #dbdbdb;*/
+  font-size: 28px;
+  opacity: 0.6;
+  color: #f42c27 !important;
+}
+
+#create-one:hover {
+  color: #2293fb;
+}
+
+.temp-del:hover {
+  opacity: 1;
+  color: #f42c27 !important;
+}
+
+.td-temp-del {
+  width: 35px;
+  /*border: 1px red solid !important;*/
+  border: 0 !important;
+  cursor: pointer;
+}
+
+.layui-table tbody tr:hover, .layui-table-hover {
+  background: none !important;
+
+}
+.nav-animate {
+  z-index: 99999;
+  /*border: 1px ;*/
+  /*width: 80%;*/
+  background-color: #eaeaea;
+  box-shadow: 0px 4px 10px #848484;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  line-height: 55px;
+
+}
+.sys-form-item{
+  width: 300px !important;
+}
+.sys-form-label{
+  text-align: center !important;
+  padding: 9px 0 !important;
+  width: 110px !important;
+}
+.sys-input-block{
+  margin-left: 130px !important;
+}
+.common_display{
+  /*height: 100px;*/
+  /*display: none;*/
+  /*border: 1px orangered solid;*/
+}
+#create-one{
+  cursor: pointer;
+}

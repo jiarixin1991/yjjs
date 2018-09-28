@@ -1,0 +1,120 @@
+.layui-table thead tr {
+  /*修改表头颜色  */
+  /*background-color: #1E9FFF !important;*/
+  /*color: #ffffff;*/
+
+}
+
+.common_header {
+  margin-top: 45px;
+  margin-left: 2.5%;
+  width: 95%;
+  height: 45px;
+}
+/*动画导航栏*/
+.common_header2 {
+  width: 60%;
+  height: 45px;
+  margin: 45px auto 0 auto;
+  /*border: 1px red solid;*/
+
+}
+
+.common_css {
+  width: 95%;
+  margin: 30px auto;
+  /*border: 1px red solid;*/
+}
+
+.add-btn {
+  border-radius: 50px !important;
+}
+
+.dh-breadcrumb {
+  position: absolute;
+  left: 2.5%;
+  top: 30%;
+  padding-left: 10px;
+  border-left: 5px rgb(34, 147, 253) solid;
+  font-weight: 700;
+}
+
+.dh-breadcrumb span a {
+  color: #2293FD !important;
+}
+
+.layui-breadcrumb a:hover {
+  color: red !important;
+}
+
+.layui-breadcrumb span[lay-separator] {
+  color: #2293FD !important;
+}
+
+.new_btn {
+  position: absolute;
+  right: 2.5%;
+  top: 30%;
+}
+
+#pagedemo {
+  width: 80%;
+  margin: 0 auto;
+  /*border: 1px red solid;*/
+}
+
+.truck-file {
+  height: 38px;
+  line-height: 1.3;
+  line-height: 38px \9;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  width: 80%;
+  padding-left: 10px;
+  border-color: #e6e6e6;
+}
+
+
+/*弹出层弧边*/
+.layui-layer-iframe {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.layui-table-sort[lay-sort=desc] .layui-table-sort-desc {
+  border-top-color: red !important;
+}
+
+.layui-table-sort[lay-sort=asc] .layui-table-sort-asc {
+  border-bottom-color: red !important;
+}
+
+.layui-layer-title {
+  height: 50px !important;
+  line-height: 50px !important;
+}
+
+.layui-layer-setwin {
+  position: absolute !important;
+  right: 15px !important;
+  top: 20px !important;
+  font-size: 0 !important;
+  line-height: initial !important;
+}
+
+/*弹框头部颜色*/
+.layui-layer-title {
+  background-color: #2293fd !important;
+  color: white !important;
+}
+
+.layui-layer-setwin .layui-layer-min cite {
+  background-color: white !important;
+}
+
+.layui-layer-setwin .layui-layer-min:hover cite {
+  background-color: #f3f3f3 !important;
+}

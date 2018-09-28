@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 微软雅黑;
+}
+
+body html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.layui-form{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url(../img/bgIcon.jpg) no-repeat;
+    background-size: cover;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.mainBgDiv{
+    width: 100%;
+    min-width: 1100px;
+    height: 100%;
+}
+
+/*!*头*!
+.mainTitle{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    min-height: 50px;
+    background-color: #2293FB;
+    display: none;
+}
+
+.mainLogo{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.logout{
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    right: 70px;
+    height: 55px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.logout i{
+    color: #FFFFFF;
+    font-size: 15px !important;
+}*/
+
+/**/
+.mainBody{
+    position: absolute;
+    width: 100%;
+    min-width: 1100px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-height: 600px;
+}
+
+/*搜索*/
+.search_div{
+    position: relative;
+    width: 600px;
+    margin: 6% auto 6%;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 0 20px #D2D2D2;
+}
+
+.newInput{
+    margin-left: 30px !important;
+    height: 56px !important;
+}
+
+.searchInput{
+    width: 450px !important;
+    height: 100% !important;
+    border: 0 !important;
+    font-size: 14px;
+    font-weight: bold;
+    color: #999999;
+}
+
+/*placeholder字体颜色*/
+input::-webkit-input-placeholder{
+    color:#999999;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#999999;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#999999;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#999999;
+}
+
+.layui-icon{
+    font-size: 30px !important;
+    line-height: 56px;
+    color: #999999;
+}
+
+.searchIcon{
+    position: absolute;
+    top: 0;
+    right: 35px;
+}
+
+/*模块*/
+.main_module{
+    width: 1000px;
+    height: 327px;
+    /*background-color: #1E9FFF;*/
+    margin: 0 auto;
+}
+
+.module{
+    position: relative;
+    height: 45%;
+    min-height: 100px;
+    background-color: white;
+    float: left;
+    margin: 0 11px 22px 11px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #999999;
+    text-align: center;
+    cursor: pointer;
+}
+
+.module .module_name{
+    font-size: 15px;
+    color: #2293FB;
+    font-weight: bold;
+}
+
+.module .module_name2{
+    font-size: 15px;
+    color: #999999;
+    font-weight: bold;
+}
+
+.module_big{
+    width: 27.5%;
+}
+
+.module_small{
+    width: 21%;
+}
+
+.module span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    right: 10px;
+    margin: 0 auto;
+}
+
+.hoverStyle1{
+    background-color: #2293FB;
+}
+
+/*移入显示*/
+.hoverSpan{
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.hoverInfo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+    /* cursor: pointer; */
+    background-color: #2293FB;
+    border-radius: 10px;
+}
+
+.show_data{
+    position: absolute;
+    width: 80%;
+    height: 30px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: none;
+}
+
+.show_data span a{
+    color: #2293FB;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+.hover_border{
+    border: 2px #2293FB solid;
+}
+
+/*底部*/
+.footDiv{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 11px;
+    color: #555555;
+}
+
+.footDiv span{
+    line-height: 25px;
+}
+
+.footer1 span{
+    margin-left: 10px;
+}
+/*编辑位置*/
+.al-bianji{
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 99999;
+  color: #2293FD;
+}
+

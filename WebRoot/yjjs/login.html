@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <!--<script type="text/javascript" src="js/jquery-3.2.1.js"></script>-->
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script>
+        layui.use(['form'], function () {
+            var form = layui.form;
+            form.render();
+            form.verify();
+        });
+    </script>
+    <style>
+        .layui-form-checkbox[lay-skin=primary] span{
+            font-size: 14px !important;
+            color: #919191;
+            margin-left: 1px;
+        }
+        .layui-form-checkbox[lay-skin=primary]{
+            left: 3px;
+            width: 15px;
+            height: 15px !important;
+            top: -2px;
+        }
+        .layui-form-checkbox[lay-skin=primary] i{
+            width: 14px;
+            height: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form">
+    <div class="bgDiv">
+
+        <div class="picDiv">
+            <img class="loginPic" src="img/loginIcon2.png">
+        </div>
+
+        <div class="loginDiv">
+            <div class="login_logo">
+                <img src="img/logo_blue.png">
+            </div>
+
+            <div class="login_text">
+                <div class="login_input">
+                    <i class="layui-icon newIcon">&#xe66f;</i>
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入账号" autocomplete="off" title="请输入账号"
+                           class="layui-input newInput">
+                </div>
+                <div class="login_input">
+                    <i class="layui-icon newIcon">&#xe673;</i>
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" title="请输入密码"
+                           autocomplete="off" class="layui-input newInput">
+                </div>
+
+                <div class="login_word">
+                    <span class="left_word"><a>记住密码</a><input type="checkbox" name="remPsw" lay-skin="primary" title=""></span>
+                    <span class="right_word"><a>忘记密码？</a></span>
+                </div>
+                <div>
+                    <!--<button class="layui-btn layui-btn-normal subBtn" lay-filter="formDemo">登录</button>-->
+                  <a href="main_page.html" class="layui-btn layui-btn-normal subBtn">登录</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

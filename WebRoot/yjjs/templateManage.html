@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/templateManage.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/zturn.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            scroll();
+
+            $(document).on("click", ".closeIcon", function(){
+                //alert("123");
+                $(this).closest("li").remove();
+                scroll();
+            });
+          $('.addBtn').on('click', function () {
+            window.location.href = "createDataTemplate2.html";
+          });
+        });
+
+        //生成轮播
+        function scroll(){
+            var count = $(".poster-item").length;
+            var Awidth = 0;
+            if(count < 3){
+                Awidth = 300;
+            } else {
+                Awidth = 500;
+            }
+            //alert(count);
+            var aa=new zturn({
+                id:"zturn",
+                opacity:0.9,    //透明度
+                width:220,     //整体向左偏移量  一个卡片的宽度
+                Awidth:Awidth,  //轮播区域宽度
+                scale:0.8,    //渐变尺寸
+                auto:false,//是否轮播 默认5000  true/false
+                turning:1000//轮播时长
+            });
+        }
+
+    </script>
+</head>
+<body>
+<div class="template">
+    <div class="addTem">
+        <div class="addBtn">
+            <span>新增模板</span>
+            <i class="iconfont icon-xinzeng newFontTem"></i>
+        </div>
+    </div>
+
+    <div class="module">
+        <ul id="zturn">
+            <li class="poster-item zturn-item">
+                <div class="temOperate">
+                    <i class="iconfont icon-bianji2 editIcon"></i>
+                    <i class="iconfont icon-guanbi closeIcon"></i>
+                </div>
+                <div class="temPic">
+                    <i class="iconfont icon-moban mobanIcon"></i>
+                </div>
+                <div class="temInfo">
+                    <span class="moduleName">模板名称：都是范德萨发撒飞洒的</span>
+                    <span class="creatTime">模板创建时间：2018-01-01</span>
+                </div>
+            </li>
+            <li class="poster-item zturn-item">
+                <div class="temOperate">
+                    <i class="iconfont icon-bianji2 editIcon"></i>
+                    <i class="iconfont icon-guanbi closeIcon"></i>
+                </div>
+                <div class="temPic">
+                    <i class="iconfont icon-moban mobanIcon"></i>
+                </div>
+                <div class="temInfo">
+                    <span class="moduleName">模板名称：都是范德萨发撒飞洒的</span>
+                    <span class="creatTime">模板创建时间：2018-01-01</span>
+                </div>
+            </li>
+            <li class="poster-item zturn-item">
+                <div class="temOperate">
+                    <i class="iconfont icon-bianji2 editIcon"></i>
+                    <i class="iconfont icon-guanbi closeIcon"></i>
+                </div>
+                <div class="temPic">
+                    <i class="iconfont icon-moban mobanIcon"></i>
+                </div>
+                <div class="temInfo">
+                    <span class="moduleName">模板名称：都是范德萨发撒飞洒的</span>
+                    <span class="creatTime">模板创建时间：2018-01-01</span>
+                </div>
+            </li>
+            <li class="poster-item zturn-item">
+                <div class="temOperate">
+                    <i class="iconfont icon-bianji2 editIcon"></i>
+                    <i class="iconfont icon-guanbi closeIcon"></i>
+                </div>
+                <div class="temPic">
+                    <i class="iconfont icon-moban mobanIcon"></i>
+                </div>
+                <div class="temInfo">
+                    <span class="moduleName">模板名称：都是范德萨发撒飞洒的</span>
+                    <span class="creatTime">模板创建时间：2018-01-01</span>
+                </div>
+            </li>
+            <li class="poster-item zturn-item">
+                <div class="temOperate">
+                    <i class="iconfont icon-bianji2 editIcon"></i>
+                    <i class="iconfont icon-guanbi closeIcon"></i>
+                </div>
+                <div class="temPic">
+                    <i class="iconfont icon-moban mobanIcon"></i>
+                </div>
+                <div class="temInfo">
+                    <span class="moduleName">模板名称：都是范德萨发撒飞洒的</span>
+                    <span class="creatTime">模板创建时间：2018-01-01</span>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

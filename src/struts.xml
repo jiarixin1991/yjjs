@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+    <constant name="struts.url.includeParams" value="all"/>
+    <!--struts2 支持spring-->
+    <!-- 指定允许上传的文件最大字节数。默认值是2097152(2M) 当前是500M -->
+    <!--<constant name="struts.multipart.maxSize" value="524288000"/>-->
+    <!-- <constant name="struts.multipart.saveDir" value="E:\"></constant> -->
+    <bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest" name="myRequestParser"
+          class="com.tdts.Interceptor.MyRequestParseWrapper" scope="default" optional="true"/>
+    <!-- 改成自己定义的文件上传方式 -->
+    <!-- struts2 *****上传一定要注意的一点***** status2.3.4版本一下的 设置struts.multipart.handler  -->
+    <!-- struts2 *****上传一定要注意的一点***** struts2.3.15.1 以后的版本  设置struts.multipart.parser   -->
+    <constant name="struts.multipart.parser" value="myRequestParser"/>
+
+
+    <!-- <include file="/struts-default.xml"/> -->
+    <!--<package name="all" extends="struts-default,json-default" namespace="/">
+        <interceptors>
+            <interceptor name="checkLogin" class="com.Interceptor.CheckLoginInterceptor"/>
+            <interceptor name="configdebug" class="com.configdebug.interceptor.ConfigDebugInterceptor">
+                <param name="configFileLocation">/configdebug.properties</param>
+            </interceptor>
+            <interceptor-stack name="mydefault">
+                <interceptor-ref name="configdebug"/>
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="checkLogin"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="mydefault"/>
+        <global-results>
+            <result name="index">/index.jsp</result>
+        </global-results>
+    </package>-->
+    <!-- 监控 -->
+    <package name="struts" namespace="/" extends="struts-default,json-default">
+        <!--测试！！！-->
+        <action name="loginAction" class="com.tdts.action.loginAction" method="login">
+            <result name="success">/login.jsp</result>
+        </action>
+        <action name="md5FileUploadAction" class="com.tdts.action.md5FileUploadAction" method="md5FileUpload">
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="Md5CheckAction" class="com.tdts.action.md5FileUploadAction" method="Md5Check">
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="mergeFilesAction" class="com.tdts.action.md5FileUploadAction" method="mergeFiles">
+            <result type="json">
+                <param name="root">jsonStr</param>
+            </result>
+        </action>
+        <action name="createTemplateFieldAction" class="com.tdts.action.TemplateAction" method="createTemplateField"><!--创建模板-->
+            <result type="json">
+                <param name="root">jsonSend</param>
+            </result>
+        </action>
+        <action name="findFixedFieldAction" class="com.tdts.action.TemplateAction" method="findFixedField"><!--查询固定字段-->
+            <result type="json">
+                <param name="root">jsonSend</param>
+            </result>
+        </action>
+    </package>
+    <!-- <package name="struts2" namespace="/" extends="json-default">
+
+
+    </package> -->
+    <include file="struts2.xml"></include>
+</struts>
+

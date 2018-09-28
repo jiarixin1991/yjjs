@@ -1,0 +1,6 @@
+##TODO
+> TemplateManageDaoImpl createTemplate <br/>  
+默认字段还没有加入 主键primary key 还没加 是否解决（Y/N）
+
+> TODO 整个表  删除数据库表操作 暂时不写（后续问清楚了有在写）
+

@@ -1,0 +1,94 @@
+html, body {
+  /*font-family: SimSun;*/
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  min-height: 500px;
+  width: 100%;
+  /*border: 1px yellow solid;*/
+  background-color: #ffffff;
+  /*overflow: hidden;*/
+}
+
+.create-fileupload {
+  padding-top: 30px;
+  width: 900px;
+  height: 100%;
+  margin: 0 auto;
+  /*border: 1px red solid;*/
+}
+
+.btns {
+  width: 80%;
+  height: 350px;
+  margin: 0 auto; /*继承*/
+  /*border: 1px rebeccapurple solid;*/
+}
+
+.fileList {
+  width: 100%;
+  min-height: 350px;
+  margin: 0 auto;
+  /*border: 1px red solid;*/
+
+}
+
+.btn-style {
+  width: 230px;
+  height: 230px;
+  /*border: #00b7ee 1px solid;*/
+  float: left;
+  margin-top: 12%;
+  margin-left: 12%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #F2F2F2;
+  box-shadow: 0px 5px 9px #d8d8d8;
+  cursor: pointer;
+}
+
+.btn-style:hover {
+  /*transform: scale(1.1);!*放大到1.1倍*!*/
+  border: #00b7ee 2px solid;
+}
+
+.webuploader-pick {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background: none !important;
+  padding: 10px 15px;
+  color: black !important;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.webuploader-pick-hover {
+  background: none !important;
+}
+
+.file-table tr, .file-table tr th {
+  text-align: center;
+
+}
+
+.file-table .file-height td{
+  padding: 35px !important;
+}
+
+.file-table .progress-height td {
+  padding: 0 !important;
+  height: 5px !important;
+}
+.progress{
+  height: 10px !important  ;
+  margin-bottom: 0px!important;
+}
+/*
+.icon {
+    width: 5em; height: 5em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}*/

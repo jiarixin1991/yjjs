@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+}
+
+html body{
+    width: 100%;
+    height: 100%;
+    background-color: #F2F2F2;
+}
+
+.template{
+    position: relative;
+    width: 900px;
+    height: 470px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.addTem{
+    position: relative;
+    width: 900px;
+    height: 100px;
+    /*background-color: #2293FD;*/
+}
+
+.addBtn{
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+.addBtn span{
+    font-size: 13px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #999999;
+    line-height: 30px;
+}
+
+.addBtn .newFontTem{
+    font-size: 18px;
+    color: #2293FD;
+
+}
+
+.module{
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    bottom: 0;
+    /*background-color: skyblue;*/
+}
+
+.zturn-item{
+    width: 220px;
+    height: 300px;
+    transition: all 0.5s;cursor: default;
+    -moz-transition: all 0.5s;cursor: default;
+    -webkit-transition: all 0.5s;cursor: default;
+    -o-transition: all 0.5s;cursor: default;
+    background-color: #F4F4F4;
+}
+
+.temOperate{
+    width: 220px;
+    height: 45px;
+    /*background-color: #c2c2c2;*/
+}
+
+.editIcon{
+    font-size: 20px !important;
+    color: #2293FD;
+    margin-left: 15px;
+    line-height: 45px;
+    cursor: pointer;
+}
+
+.closeIcon{
+    font-size: 32px !important;
+    color: #E2E2E2;
+    float: right;
+    margin-right: 15px;
+    line-height: 45px;
+    cursor: pointer;
+}
+
+.closeIcon:hover{
+    color: #D1D1D1;
+}
+
+.temPic{
+    width: 220px;
+    height: 140px;
+    text-align: center;
+}
+
+.mobanIcon{
+    color: #2293FD;
+    font-size: 60px !important;
+    margin-top: 45px;
+    line-height: 140px;
+}
+
+.temInfo{
+    padding: 20px 25px 20px 55px;
+}
+
+.temInfo span{
+    display: block;
+    font-size: 13px;
+    color: #666666;
+    text-indent: -2em;
+}

@@ -1,0 +1,30 @@
+.sys-body {
+  padding-top: 30px;
+  width: 900px;
+  height: 100%;
+  margin: 0 auto;
+  /*border: 2px red solid;*/
+
+}
+.sys-table{
+  width: 700px;
+  height: 300px;
+  margin: 0 auto;
+
+}
+.sys-fanhui:hover {
+  color: black;
+  cursor: pointer;
+}
+.sys-table tr td {
+  height: 85px;
+  /*min-width: 50px;*/
+  /*border:  1px blueviolet solid;*/
+}
+.aliconfont{
+  color: #2293FD;
+  font-size: 30px;
+}
+.sys-table tr td{
+  /*border: 1px blue solid;*/
+}
