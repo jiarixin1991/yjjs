@@ -46,11 +46,11 @@ public class TemplateTableDaoImpl extends DbBasicDaoImpl implements TemplateTabl
 
     @Override
     public int deleteTemp(Connection conn, String tempId) {
-        String sql = "DELETE FROM TemplateTable WHERE TempId = " + tempId;
+        String sql123 = "DELETE FROM TemplateTable WHERE TempId = " + tempId;
         //String sql = "DROP  TABLE Students";
         //System.err.println("sql:["+sql+"]");
-        StrUtil.syse(sql);
-        return DBUtility.execSQLWithTrans(conn, sql);
+        StrUtil.syse(sql123);
+        return DBUtility.execSQLWithTrans(conn, sql123);
 
     }
 
